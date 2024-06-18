@@ -29,6 +29,14 @@ namespace Tutorial.MyFrames
             allexercise = DbConnect.prObj.Exercises.ToList();
             List<Exercise> sortMaterials = allexercise.OrderBy(x => x.Id).ToList();
             ExeriseListView.ItemsSource = sortMaterials;
+            Loaded += LoadExerise;
+        }
+        private void LoadExerise(object sender, RoutedEventArgs e)
+        {
+            if (GlobalData.IdRole != 1 && GlobalData.IdRole != 2)
+            {
+                addex.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

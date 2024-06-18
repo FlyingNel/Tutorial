@@ -25,7 +25,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Width="100" 
+        <Button x:Name="addsection"
+                Width="100" 
                 Height="25" 
                 HorizontalAlignment="Right" 
                 Content="добавить" 

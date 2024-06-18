@@ -16,7 +16,7 @@
             <MenuItem Header="Профиль" Click="Profile_Click"/>
             <MenuItem Header="Поддержка" Click="Support_Click"/>
             <MenuItem Header="О программе" Click="About_Click"/>
-            <MenuItem Header="Пользователи" Click="UsersPages_Click"/>
+            <MenuItem x:Name="adminbutton" Header="Пользователи" Click="UsersPages_Click"/>
         </Menu>
     </Grid>
 </Page>

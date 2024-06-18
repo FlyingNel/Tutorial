@@ -24,6 +24,14 @@ namespace Tutorial.MyFrames
         public Menu()
         {
             InitializeComponent();
+            Loaded += Menu_Loaded;
+        }
+        private void Menu_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (GlobalData.IdRole != 1)
+            {
+                adminbutton.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Contents_Click(object sender, RoutedEventArgs e)

@@ -30,10 +30,14 @@ namespace Tutorial.MyFrames
             var allSelections = _context.Selections.ToList();
             var sortedSelections = allSelections.OrderBy(x => x.Id).ToList();
             ContentList.ItemsSource = sortedSelections;
+            Loaded += LoadSelections;
         }
-        private void LoadSelections()
+        private void LoadSelections(object sender, RoutedEventArgs e)
         {
-            
+            if (GlobalData.IdRole != 1 && GlobalData.IdRole != 2)
+            {
+                addsection.Visibility = Visibility.Hidden;
+            }
         }
         private void ContentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

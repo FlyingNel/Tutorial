@@ -23,6 +23,15 @@ namespace Tutorial.MyFrames
         public Profile()
         {
             InitializeComponent();
+            LoadUserData();
+        }
+        private void LoadUserData()
+        {
+            if (GlobalData.CurrentUser != null)
+            {
+                UserNameTxb.Text = $"Имя пользователя: {GlobalData.CurrentUser.Name}";
+                UserEmailTxb.Text = $"Электронная почта: {GlobalData.CurrentUser.Email}";
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
